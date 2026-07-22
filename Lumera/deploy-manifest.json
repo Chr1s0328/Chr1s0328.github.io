@@ -1,10 +1,10 @@
 {
   "base": "/Lumera/",
   "url": "https://haidilao0328.github.io/Lumera/",
-  "generatedAt": "2026-07-22T07:02:20.328Z",
-  "mediaCount": 39,
-  "mediaBytes": 124536754,
-  "mediaMiB": 118.77,
+  "generatedAt": "2026-07-22T07:44:30.872Z",
+  "mediaCount": 38,
+  "mediaBytes": 104420878,
+  "mediaMiB": 99.58,
   "media": [
     {
       "path": "web_demo/project_assets/teaser.jpg",
@@ -15,11 +15,6 @@
       "path": "web_demo/project_assets/pipeline.png",
       "dst": "media/web_demo/project_assets/pipeline.png",
       "bytes": 2593534
-    },
-    {
-      "path": "web_demo/project_assets/demo_video.mp4",
-      "dst": "media/web_demo/project_assets/demo_video.mp4",
-      "bytes": 20115876
     },
     {
       "path": "web_demo/project_assets/demo_poster.jpg",
