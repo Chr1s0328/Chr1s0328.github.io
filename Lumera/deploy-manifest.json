@@ -1,0 +1,205 @@
+{
+  "base": "/Lumera/",
+  "url": "https://haidilao0328.github.io/Lumera/",
+  "generatedAt": "2026-07-22T07:02:20.328Z",
+  "mediaCount": 39,
+  "mediaBytes": 124536754,
+  "mediaMiB": 118.77,
+  "media": [
+    {
+      "path": "web_demo/project_assets/teaser.jpg",
+      "dst": "media/web_demo/project_assets/teaser.jpg",
+      "bytes": 516634
+    },
+    {
+      "path": "web_demo/project_assets/pipeline.png",
+      "dst": "media/web_demo/project_assets/pipeline.png",
+      "bytes": 2593534
+    },
+    {
+      "path": "web_demo/project_assets/demo_video.mp4",
+      "dst": "media/web_demo/project_assets/demo_video.mp4",
+      "bytes": 20115876
+    },
+    {
+      "path": "web_demo/project_assets/demo_poster.jpg",
+      "dst": "media/web_demo/project_assets/demo_poster.jpg",
+      "bytes": 191544
+    },
+    {
+      "path": "web_demo/project_assets/scenes/burger/input.png",
+      "dst": "media/web_demo/project_assets/scenes/burger/input.png",
+      "bytes": 1033089
+    },
+    {
+      "path": "web_demo/project_assets/scenes/burger/bbox.png",
+      "dst": "media/web_demo/project_assets/scenes/burger/bbox.png",
+      "bytes": 781658
+    },
+    {
+      "path": "web_demo/project_assets/scenes/burger/lights.png",
+      "dst": "media/web_demo/project_assets/scenes/burger/lights.png",
+      "bytes": 779347
+    },
+    {
+      "path": "web_demo/project_assets/scenes/burger/final.png",
+      "dst": "media/web_demo/project_assets/scenes/burger/final.png",
+      "bytes": 2155211
+    },
+    {
+      "path": "web_demo/project_assets/scenes/western/bbox.png",
+      "dst": "media/web_demo/project_assets/scenes/western/bbox.png",
+      "bytes": 970070
+    },
+    {
+      "path": "web_demo/project_assets/scenes/western/lights.png",
+      "dst": "media/web_demo/project_assets/scenes/western/lights.png",
+      "bytes": 974502
+    },
+    {
+      "path": "web_demo/project_assets/scenes/western/final.png",
+      "dst": "media/web_demo/project_assets/scenes/western/final.png",
+      "bytes": 1752590
+    },
+    {
+      "path": "video_demo/topdown_interior/visualization/topdown_interior_reconstruction_3d_bboxes_on_rgb.png",
+      "dst": "media/video_demo/topdown_interior/visualization/topdown_interior_reconstruction_3d_bboxes_on_rgb.png",
+      "bytes": 1482165
+    },
+    {
+      "path": "video_demo/topdown_interior/visualization/topdown_interior_reconstruction_lights_on_rgb.png",
+      "dst": "media/video_demo/topdown_interior/visualization/topdown_interior_reconstruction_lights_on_rgb.png",
+      "bytes": 1327283
+    },
+    {
+      "path": "video_demo/topdown_interior/renders/state_000_init_init_00.png",
+      "dst": "media/video_demo/topdown_interior/renders/state_000_init_init_00.png",
+      "bytes": 361124
+    },
+    {
+      "path": "video_demo/topdown_interior/visualization/topdown_interior_final_camera_view.png",
+      "dst": "media/video_demo/topdown_interior/visualization/topdown_interior_final_camera_view.png",
+      "bytes": 1106914
+    },
+    {
+      "path": "web_demo/project_assets/posters/graveyard.jpg",
+      "dst": "media/web_demo/project_assets/posters/graveyard.jpg",
+      "bytes": 148636
+    },
+    {
+      "path": "video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/01_graveyard/graveyard_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "dst": "media/video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/01_graveyard/graveyard_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "bytes": 8704099
+    },
+    {
+      "path": "video_demo/graveyard/visualization/graveyard_demo_progression.mp4",
+      "dst": "media/video_demo/graveyard/visualization/graveyard_demo_progression.mp4",
+      "bytes": 421309
+    },
+    {
+      "path": "web_demo/project_assets/posters/burger_out.jpg",
+      "dst": "media/web_demo/project_assets/posters/burger_out.jpg",
+      "bytes": 181165
+    },
+    {
+      "path": "video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/02_burger_out/burger_out_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "dst": "media/video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/02_burger_out/burger_out_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "bytes": 14131601
+    },
+    {
+      "path": "video_demo/burger_out/visualization/burger_out_demo_progression.mp4",
+      "dst": "media/video_demo/burger_out/visualization/burger_out_demo_progression.mp4",
+      "bytes": 1572765
+    },
+    {
+      "path": "web_demo/project_assets/posters/house.jpg",
+      "dst": "media/web_demo/project_assets/posters/house.jpg",
+      "bytes": 205372
+    },
+    {
+      "path": "video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/03_house/house_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "dst": "media/video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/03_house/house_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "bytes": 11915443
+    },
+    {
+      "path": "video_demo/house/visualization/house_demo_progression.mp4",
+      "dst": "media/video_demo/house/visualization/house_demo_progression.mp4",
+      "bytes": 948603
+    },
+    {
+      "path": "web_demo/project_assets/posters/topdown_interior.jpg",
+      "dst": "media/web_demo/project_assets/posters/topdown_interior.jpg",
+      "bytes": 153087
+    },
+    {
+      "path": "video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/04_topdown_interior/topdown_interior_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "dst": "media/video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/04_topdown_interior/topdown_interior_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "bytes": 8110294
+    },
+    {
+      "path": "video_demo/topdown_interior/visualization/topdown_interior_demo_progression.mp4",
+      "dst": "media/video_demo/topdown_interior/visualization/topdown_interior_demo_progression.mp4",
+      "bytes": 886998
+    },
+    {
+      "path": "web_demo/project_assets/posters/moon.jpg",
+      "dst": "media/web_demo/project_assets/posters/moon.jpg",
+      "bytes": 215550
+    },
+    {
+      "path": "video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/05_moon/moon_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "dst": "media/video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/05_moon/moon_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "bytes": 10416122
+    },
+    {
+      "path": "video_demo/moon/visualization/moon_demo_progression.mp4",
+      "dst": "media/video_demo/moon/visualization/moon_demo_progression.mp4",
+      "bytes": 792903
+    },
+    {
+      "path": "web_demo/project_assets/posters/industry.jpg",
+      "dst": "media/web_demo/project_assets/posters/industry.jpg",
+      "bytes": 109173
+    },
+    {
+      "path": "video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/06_industry/industry_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "dst": "media/video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/06_industry/industry_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "bytes": 6676706
+    },
+    {
+      "path": "video_demo/industry/visualization/industry_demo_progression.mp4",
+      "dst": "media/video_demo/industry/visualization/industry_demo_progression.mp4",
+      "bytes": 628361
+    },
+    {
+      "path": "web_demo/project_assets/posters/japanese_castle.jpg",
+      "dst": "media/web_demo/project_assets/posters/japanese_castle.jpg",
+      "bytes": 151978
+    },
+    {
+      "path": "video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/07_japanese_castle/japanese_castle_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "dst": "media/video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/07_japanese_castle/japanese_castle_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "bytes": 8519067
+    },
+    {
+      "path": "video_demo/japanese_castle/visualization/japanese_castle_demo_progression.mp4",
+      "dst": "media/video_demo/japanese_castle/visualization/japanese_castle_demo_progression.mp4",
+      "bytes": 1067527
+    },
+    {
+      "path": "web_demo/project_assets/posters/sickamansion.jpg",
+      "dst": "media/web_demo/project_assets/posters/sickamansion.jpg",
+      "bytes": 181138
+    },
+    {
+      "path": "video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/08_sickamansion/sickamansion_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "dst": "media/video_demo/final_pbr_8case_trajectory_20s_cycles_20260702_040200/08_sickamansion/sickamansion_final_pbr_manual_trajectory_20s_cycles.mp4",
+      "bytes": 11311378
+    },
+    {
+      "path": "video_demo/sickamansion/visualization/sickamansion_demo_progression.mp4",
+      "dst": "media/video_demo/sickamansion/visualization/sickamansion_demo_progression.mp4",
+      "bytes": 945938
+    }
+  ]
+}
