@@ -4004,7 +4004,7 @@ void main() {
             <img src="${Ln(Yi.demoPoster)}" alt="Lumera overview video placeholder" loading="lazy" />
             <div class="video-placeholder-panel mono">
               <span>VIDEO PLACEHOLDER</span>
-              <b>YouTube link coming soon</b>
+              <b>Coming soon</b>
             </div>
           </div>
         </div>
