@@ -3960,7 +3960,7 @@ void main() {
         <div class="notes"><sup>*</sup>Equal contribution&nbsp;&nbsp;&nbsp;<sup>†</sup>Corresponding author</div>
 
         <div class="actions">
-          <span class="btn primary is-disabled" aria-disabled="true"><i data-lucide="file-text"></i>Paper · soon</span>
+          <a class="btn primary" href="https://arxiv.org/abs/2607.20889" target="_blank" rel="noopener noreferrer"><i data-lucide="file-text"></i>arXiv</a>
           <a class="btn ghost" aria-disabled="true"><i data-lucide="github"></i>Code · soon</a>
           <a class="btn ghost" aria-disabled="true"><i data-lucide="database"></i>Lumera-2K · soon</a>
         </div>
@@ -4110,7 +4110,7 @@ void main() {
     <footer class="foot">
       <div class="wrap"><div class="row">
         <span>Lumera · Engine-Native Editable 3D World Reconstruction</span>
-        <span>Paper soon · Code soon · Lumera-2K soon</span>
+        <span><a href="https://arxiv.org/abs/2607.20889" target="_blank" rel="noopener noreferrer">Paper</a> · Code soon · Lumera-2K soon</span>
       </div></div>
     </footer>
   </main>
