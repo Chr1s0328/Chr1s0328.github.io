@@ -1,80 +1,718 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Academic homepage of Henghaofan Zhang.">
-  <title>Henghaofan Zhang | UESTC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Henghaofan Zhang is a researcher working on 3D/4D vision, world reconstruction, and generative AI.">
+  <meta name="theme-color" content="#f5f3ec">
+  <meta property="og:title" content="Henghaofan Zhang — 3D/4D Vision Researcher">
+  <meta property="og:description" content="Research in 3D/4D reconstruction, generative models, and vision-language systems.">
+  <title>Henghaofan Zhang — 3D/4D Vision Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
   <style>
-    /* 简单的学术极简风样式 */
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
-      max-width: 800px; 
-      margin: 0 auto; 
-      padding: 40px 20px; 
-      line-height: 1.6; 
-      color: #333;
+    :root {
+      --ink: #17211d;
+      --muted: #65706a;
+      --paper: #f5f3ec;
+      --paper-deep: #ebe8de;
+      --card: rgba(255, 255, 255, .68);
+      --line: rgba(23, 33, 29, .13);
+      --green: #256b4a;
+      --green-deep: #174b35;
+      --lime: #dbe9a6;
+      --blue: #8ecae8;
+      --peach: #f1b59c;
+      --shadow: 0 22px 60px rgba(40, 50, 44, .10);
+      --radius: 28px;
     }
-    h1 { margin-bottom: 5px; font-size: 2.2em; }
-    h2 { font-size: 1.5em; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 30px;}
-    .subtitle { color: #666; font-size: 1.1em; margin-bottom: 30px; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .card { background: #f9f9f9; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 5px; }
-    .contact-info { margin-bottom: 20px; }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f7f6f1;
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      transform: translateY(-150%);
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(245, 243, 236, .78);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(18px);
+      transition: border-color .25s ease, box-shadow .25s ease;
+    }
+    .site-nav.scrolled {
+      border-color: var(--line);
+      box-shadow: 0 8px 24px rgba(23, 33, 29, .05);
+    }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -.02em;
+    }
+    .brand-mark {
+      width: 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--green-deep);
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 17px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: #435049;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .2s ease, background .2s ease;
+    }
+    .nav-links a:hover { color: var(--ink); background: rgba(255, 255, 255, .68); }
+    .nav-links .nav-cta { color: white; background: var(--green-deep); }
+    .nav-links .nav-cta:hover { color: white; background: var(--green); }
+
+    .hero {
+      min-height: 560px;
+      padding: 76px 0 64px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(330px, .82fr);
+      align-items: center;
+      gap: clamp(44px, 7vw, 88px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 24px;
+      color: var(--green-deep);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(37, 107, 74, .12);
+      content: "";
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 720px;
+      margin-bottom: 16px;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(54px, 6.2vw, 82px);
+      font-weight: 600;
+      line-height: .98;
+      letter-spacing: -.05em;
+    }
+    .hero-role {
+      margin-bottom: 23px;
+      color: var(--green-deep);
+      display: grid;
+      gap: 7px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .hero-role > div {
+      max-width: 590px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-role a { text-underline-offset: 3px; }
+    .hero-role time { color: var(--muted); font-size: 12px; font-weight: 600; white-space: nowrap; }
+    .hero-copy > p {
+      max-width: 650px;
+      margin-bottom: 26px;
+      color: #4e5a54;
+      font-size: clamp(16px, 1.8vw, 18px);
+      line-height: 1.65;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 20px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .58);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(23, 33, 29, .10); background: white; }
+    .button.primary { border-color: var(--green-deep); color: white; background: var(--green-deep); }
+    .button.primary:hover { background: var(--green); }
+    .button svg { width: 17px; height: 17px; }
+
+    .focus-card {
+      padding: 29px 30px 25px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .58);
+    }
+    .focus-card h2 {
+      margin-bottom: 18px;
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .focus-list { list-style: none; margin: 0; padding: 0; }
+    .focus-list li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 8px;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+    .focus-list span { color: var(--green); font-family: "Newsreader", Georgia, serif; font-weight: 600; }
+
+    .research-orbit {
+      position: relative;
+      aspect-ratio: 1 / 1.08;
+      border: 1px solid rgba(23, 33, 29, .11);
+      border-radius: 48% 52% 47% 53% / 57% 42% 58% 43%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.94) 0 22%, transparent 23%),
+        linear-gradient(145deg, rgba(255,255,255,.75), rgba(235,232,222,.5));
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .research-orbit::before,
+    .research-orbit::after {
+      position: absolute;
+      inset: 13%;
+      border: 1px dashed rgba(23, 33, 29, .18);
+      border-radius: 50%;
+      content: "";
+      transform: rotate(-18deg);
+    }
+    .research-orbit::after { inset: 28%; border-style: solid; transform: rotate(22deg); }
+    .orbit-core {
+      position: absolute;
+      inset: 36%;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--green-deep);
+      box-shadow: 0 20px 40px rgba(23, 75, 53, .25);
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(27px, 4vw, 47px);
+      font-style: italic;
+    }
+    .orbit-tag {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid rgba(23, 33, 29, .11);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .88);
+      box-shadow: 0 16px 36px rgba(23, 33, 29, .12);
+      backdrop-filter: blur(12px);
+      font-size: 13px;
+      font-weight: 700;
+      animation: float 5s ease-in-out infinite;
+    }
+    .orbit-tag span { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 10px; font-size: 15px; }
+    .orbit-tag.one { top: 9%; right: -4%; }
+    .orbit-tag.one span { background: var(--lime); }
+    .orbit-tag.two { bottom: 20%; left: -9%; animation-delay: -1.5s; }
+    .orbit-tag.two span { background: var(--blue); }
+    .orbit-tag.three { right: -7%; bottom: 8%; animation-delay: -3s; }
+    .orbit-tag.three span { background: var(--peach); }
+    .orbit-dot { position: absolute; width: 16px; height: 16px; border: 4px solid white; border-radius: 50%; background: var(--green); box-shadow: 0 4px 12px rgba(23,33,29,.18); }
+    .orbit-dot.a { top: 23%; left: 19%; }
+    .orbit-dot.b { top: 60%; right: 18%; background: #e17f61; }
+    .orbit-dot.c { bottom: 13%; left: 35%; background: #398fb6; }
+    @keyframes float { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .fact { padding: 20px 24px; border-right: 1px solid var(--line); }
+    .fact:first-child { padding-left: 0; }
+    .fact:last-child { border-right: 0; }
+    .fact strong { display: block; margin-bottom: 2px; font-family: "Newsreader", Georgia, serif; font-size: 24px; font-weight: 600; letter-spacing: -.03em; }
+    .fact span { color: var(--muted); font-size: 13px; }
+
+    section { scroll-margin-top: 100px; }
+    .section { padding: 88px 0; }
+    .section-heading { display: grid; grid-template-columns: .55fr 1.45fr; gap: 44px; margin-bottom: 54px; }
+    .section-index { color: var(--green); font-size: 13px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h2 {
+      max-width: 760px;
+      margin-bottom: 18px;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(38px, 4.6vw, 56px);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+    .section-heading p { max-width: 670px; margin-bottom: 0; color: var(--muted); font-size: 17px; }
+
+    .about-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 20px; }
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: 0 14px 44px rgba(23,33,29,.04); }
+    .bio { padding: clamp(30px, 4vw, 52px); }
+    .bio p { margin-bottom: 19px; color: #46534c; font-size: 18px; }
+    .bio p:last-child { margin-bottom: 0; }
+    .bio strong { color: var(--ink); }
+    .interests { padding: 30px; display: flex; flex-direction: column; justify-content: space-between; background: var(--green-deep); color: white; }
+    .interests h3 { margin-bottom: 36px; font-family: "Newsreader", Georgia, serif; font-size: 28px; font-weight: 500; }
+    .interest-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .interest-list span { padding: 8px 12px; border: 1px solid rgba(255,255,255,.20); border-radius: 999px; background: rgba(255,255,255,.08); font-size: 13px; }
+    .availability { margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.78); font-size: 13px; }
+
+    .personal-notes {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .48);
+    }
+    .personal-note { padding: 25px 28px 27px; }
+    .personal-note + .personal-note { border-left: 1px solid var(--line); }
+    .personal-note-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .personal-note p { margin: 0; color: #46534c; font-size: 14px; line-height: 1.7; }
+    .personal-note:first-child p { font-family: "Newsreader", Georgia, serif; font-size: 20px; font-weight: 500; line-height: 1.4; letter-spacing: -.015em; }
+    .personal-note em { color: var(--ink); }
+    .music-picker { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .track-list { display: flex; flex-wrap: wrap; gap: 7px; }
+    .track-button {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #4d5953;
+      background: rgba(255,255,255,.62);
+      font: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .track-button:hover, .track-button[aria-pressed="true"] { border-color: var(--green); color: white; background: var(--green); }
+    .spotify-player-wrap {
+      min-height: 42px;
+      margin-top: 11px;
+      display: flex;
+      align-items: center;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .spotify-player-wrap iframe { width: 100%; height: 152px; border: 0; border-radius: 12px; }
+
+    .publications { display: grid; gap: 24px; }
+    .publication {
+      display: grid;
+      grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
+      min-height: 320px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 14px 44px rgba(23,33,29,.04);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .publication:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .publication-visual { position: relative; min-height: 300px; overflow: hidden; background: var(--paper-deep); }
+    .publication-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.75,.25,1); }
+    .publication:hover .publication-visual img { transform: scale(1.025); }
+    .publication-visual::after { position: absolute; inset: 0; background: linear-gradient(to top, rgba(23,33,29,.24), transparent 48%); content: ""; pointer-events: none; }
+    .visual-label { position: absolute; left: 20px; bottom: 18px; z-index: 2; padding: 8px 12px; border-radius: 999px; color: white; background: rgba(23,33,29,.65); backdrop-filter: blur(8px); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .publication-body { padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; }
+    .pub-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 22px; }
+    .venue { display: inline-flex; padding: 7px 11px; border-radius: 999px; background: var(--lime); color: var(--green-deep); font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .pub-number { color: #9aa29d; font-family: "Newsreader", Georgia, serif; font-size: 22px; }
+    .publication h3 { max-width: 680px; margin-bottom: 13px; font-family: "Newsreader", Georgia, serif; font-size: clamp(27px, 2.8vw, 36px); font-weight: 600; line-height: 1.1; letter-spacing: -.035em; }
+    .authors { margin-bottom: 17px; color: #69746e; font-size: 13px; line-height: 1.65; }
+    .authors .me {
+      display: inline-block;
+      padding-bottom: 1px;
+      border-bottom: 1.5px solid var(--green);
+      color: var(--ink);
+      font-weight: 800;
+      line-height: 1.25;
+    }
+    .authors sup, .author-note sup { color: var(--green-deep); font-size: .72em; font-weight: 800; line-height: 0; }
+    .author-note { margin: -10px 0 17px; color: var(--muted); font-size: 11px; }
+    .pub-summary { margin-bottom: 24px; color: #4f5c55; font-size: 15px; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: auto; }
+    .pub-links a { padding: 8px 13px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 700; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+    .pub-links a:hover { border-color: var(--green); background: rgba(219,233,166,.42); }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(34px, 6vw, 76px);
+      border-radius: 36px;
+      color: white;
+      background: var(--green-deep);
+    }
+    .contact-card::after { position: absolute; width: 390px; height: 390px; top: -190px; right: -80px; border: 1px solid rgba(255,255,255,.19); border-radius: 50%; box-shadow: 0 0 0 55px rgba(255,255,255,.04), 0 0 0 110px rgba(255,255,255,.03); content: ""; }
+    .contact-card h2 { position: relative; z-index: 1; max-width: 700px; margin-bottom: 20px; }
+    .contact-card p { position: relative; z-index: 1; max-width: 620px; margin-bottom: 32px; color: rgba(255,255,255,.73); font-size: 17px; }
+    .contact-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 12px; }
+    .contact-actions .button { border-color: rgba(255,255,255,.22); color: white; background: rgba(255,255,255,.08); }
+    .contact-actions .button:hover { background: rgba(255,255,255,.16); }
+    .contact-actions .button.primary { color: var(--green-deep); background: var(--lime); }
+
+    footer { padding: 34px 0 46px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 12px; }
+    .footer-inner a { text-underline-offset: 3px; }
+
+    .reveal { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 72px; }
+      .hero-copy { max-width: 760px; }
+      .focus-card { max-width: 680px; }
+      .section-heading { grid-template-columns: 1fr; gap: 16px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .interests { min-height: 300px; }
+      .personal-notes { grid-template-columns: 1fr; }
+      .personal-note + .personal-note { border-top: 1px solid var(--line); border-left: 0; }
+      .publication { grid-template-columns: 1fr; }
+      .publication-visual { aspect-ratio: 16 / 9; min-height: 0; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 28px, 1160px); }
+      .nav-inner { min-height: 66px; }
+      .brand-text { display: none; }
+      .nav-links a { padding: 8px 9px; font-size: 12px; }
+      .nav-links a:nth-child(2) { display: none; }
+      .hero { padding: 62px 0 54px; gap: 54px; }
+      h1 { font-size: clamp(51px, 16vw, 74px); }
+      .hero-role > div { align-items: flex-start; flex-direction: column; gap: 1px; }
+      .facts { grid-template-columns: 1fr; padding: 14px 0; }
+      .fact, .fact:first-child { padding: 13px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .fact:last-child { border-bottom: 0; }
+      .section { padding: 68px 0; }
+      .section-heading { margin-bottom: 36px; }
+      .publication-body { padding: 27px 23px 25px; }
+      .pub-top { margin-bottom: 17px; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <h1>Henghaofan Zhang</h1>
-    <div class="subtitle">
-      Undergraduate Student @ <a href="https://www.uestc.edu.cn/" target="_blank">UESTC</a><br>
-      Research Intern @ <a href="https://air.tsinghua.edu.cn/" target="_blank">AIR, THU</a><br>
-      Research Interests: Computer Vision, Deep Learning, VLM, 3D/4D AIGC
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="Henghaofan Zhang — Home">
+        <span class="brand-mark" aria-hidden="true">HZ</span>
+        <span class="brand-text">Henghaofan Zhang</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a class="nav-cta" href="mailto:hhfzhang@outlook.com">Let's talk</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a third-year undergraduate student at the 
-      <strong>University of Electronic Science and Technology of China (UESTC)</strong>, 
-      majoring in Software Engineering.
-      I am also a research intern at the 
-      <strong>Institute for AI Industry Research, Tsinghua University (AIR, THU)</strong>
-    </p>
-    <p>
-      My research interests lie in <strong>Vision-Language Models (VLM)</strong>, <strong>3D/4D AIGC</strong>, and <strong>Scene Reconstruction</strong>. 
-      I am currently looking for research internship opportunities.
-    </p>
-  </section>
+  <main id="main">
+    <header class="shell hero" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow">Computer Vision Researcher</div>
+        <h1>Henghaofan Zhang</h1>
+        <div class="hero-role">
+          <div>
+            <span>Undergraduate @ <a href="https://www.uestc.edu.cn/" target="_blank" rel="noopener noreferrer">UESTC</a></span>
+            <time datetime="2023-09">2023.09 — Now</time>
+          </div>
+          <div>
+            <span>Research Intern @ <a href="https://air.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">AIR, THU</a></span>
+            <time datetime="2026-01">2026.01 — Now</time>
+          </div>
+        </div>
+        <p>
+          I study structured 3D/4D reconstruction and generation, with a focus on physically grounded world models, engine-native representations, and code as an explicit representation for reconstruction and generation.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#publications">
+            View my research
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 14 0M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="button" href="https://github.com/haidilao0328" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 5h5v5M10 14 19 5M19 13v6H5V5h6"/></svg>
+          </a>
+        </div>
+      </div>
 
-  <section id="contact">
-    <h2>Contact & Links</h2>
-    <div class="card">
-      <ul style="list-style-type: none; padding-left: 0;">
-        <li>📧 <strong>Email:</strong> <a href="mailto:hhfzhang@outlook.com">hhfzhang@outlook.com</a></li>
-        <li>🐙 <strong>GitHub:</strong> <a href="https://github.com/haidilao0328" target="_blank">github.com/haidilao0328</a></li>
-        </ul>
+      <aside class="focus-card" aria-label="Research focus">
+        <h2>Research focus</h2>
+        <ol class="focus-list">
+          <li><span>01</span>3D / 4D Reconstruction &amp; Generation</li>
+          <li><span>02</span>World Models with Physically Correct 3D Representations</li>
+          <li><span>03</span>Code-as-Representation for 3D / 4D Reconstruction &amp; Generation</li>
+          <li><span>04</span>Vision-Language Models for Spatial Intelligence</li>
+        </ol>
+      </aside>
+    </header>
+
+    <section class="shell section" id="about">
+      <div class="section-heading reveal">
+        <div class="section-index">01 — About</div>
+        <div>
+          <h2>Research at the intersection of vision and worlds.</h2>
+          <p>I work toward structured, editable, and physically meaningful representations of our visual world.</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        <article class="panel bio reveal">
+          <p>
+            I am a third-year undergraduate student majoring in <strong>Software Engineering</strong> and currently work as a research intern.
+          </p>
+          <p>
+            My recent work spans feedforward 3D editing, simulation-ready 4D reconstruction, and engine-native scene reconstruction with editable objects and lighting.
+          </p>
+          <p>
+            I enjoy turning visual observations into representations that can be understood, manipulated, and used by downstream systems.
+          </p>
+        </article>
+        <aside class="panel interests reveal" id="research">
+          <div>
+            <h3>Research interests</h3>
+            <div class="interest-list">
+              <span>3D / 4D AIGC</span>
+              <span>Physically Grounded World Models</span>
+              <span>Code-as-Representation for 3D / 4D Recon &amp; Gen</span>
+              <span>Scene Reconstruction</span>
+              <span>Vision-Language Models</span>
+              <span>Generative Models</span>
+              <span>Physical AI</span>
+              <span>Computer Vision</span>
+            </div>
+          </div>
+          <div class="availability">Open to research collaborations and internship opportunities.</div>
+        </aside>
+      </div>
+      <div class="personal-notes reveal">
+        <div class="personal-note">
+          <span class="personal-note-label">Currently thinking about</span>
+          <p>How code can become a native representation of physical 3D/4D worlds.</p>
+        </div>
+        <div class="personal-note">
+          <span class="personal-note-label">When not doing research</span>
+          <p>
+            I build Gunpla and model kits (a proud <span lang="zh">胶佬</span>) — sanding, polishing, panel lining, filling, repainting, and electroplating. I also play FPS games such as Overwatch, VALORANT, and Counter-Strike, and listen across genres from R&amp;B and pop to rock, punk, and funk. Recently on repeat: Green Day — <em>Last Night on Earth</em>, Radiohead — <em>High and Dry</em>, The Goo Goo Dolls — <em>Name</em>, and Coldplay — <em>The Scientist</em>.
+          </p>
+          <div class="music-picker" aria-label="Songs on repeat">
+            <div class="track-list">
+              <button class="track-button" type="button" data-track="5TpPSTItCwtZ8Sltr3vdzm" data-title="Last Night on Earth — Green Day" aria-pressed="false">Last Night on Earth</button>
+              <button class="track-button" type="button" data-track="2a1iMaoWQ5MnvLFBDv4qkf" data-title="High and Dry — Radiohead" aria-pressed="false">High and Dry</button>
+              <button class="track-button" type="button" data-track="2ta2DmbyI7KdW9yOwPw7ZO" data-title="Name — The Goo Goo Dolls" aria-pressed="false">Name</button>
+              <button class="track-button" type="button" data-track="75JFxkI2RXiU7L9VXzMkle" data-title="The Scientist — Coldplay" aria-pressed="false">The Scientist</button>
+            </div>
+            <div class="spotify-player-wrap" id="spotify-player-wrap" aria-live="polite">Choose a track to load the Spotify player.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="publications">
+      <div class="section-heading reveal">
+        <div class="section-index">02 — Publications</div>
+        <div>
+          <h2>Recent publications.</h2>
+          <p>Research on editable 3D assets, physical 4D scenes, and engine-native world reconstruction.</p>
+        </div>
+      </div>
+
+      <div class="publications">
+        <article class="publication reveal">
+          <div class="publication-visual">
+            <img src="assets/pxform.jpg" alt="PartFlow framework for feedforward semantic-part-aware 3D editing" loading="lazy">
+            <span class="visual-label">Feedforward 3D Editing</span>
+          </div>
+          <div class="publication-body">
+            <div class="pub-top"><span class="venue">SIGGRAPH Asia 2026</span><span class="pub-number">01</span></div>
+            <h3>Feedforward 3D Editing Learns from Semantic-Part Transformation</h3>
+            <p class="authors">Jiawei Weng<sup>*</sup>, Saining Zhang<sup>*†</sup>, Zhenxin Diao<sup>*</sup>, Peishuo Li, <span class="me">Henghaofan Zhang</span>, Junhao Chen, Hao Zhao<sup>†</sup></p>
+            <p class="author-note"><sup>*</sup> Equal contribution &nbsp;·&nbsp; <sup>†</sup> Corresponding author</p>
+            <p class="pub-summary">A semantic-part-grounded dataset of 100K+ consistent editing pairs and PartFlow, a feedforward network for precise 3D geometry and appearance editing.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2605.27351" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              <a href="https://dennis-jwweng.github.io/pxform/" target="_blank" rel="noopener noreferrer">Project ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication reveal">
+          <div class="publication-visual">
+            <img src="assets/ovow.jpg" alt="OVOW reconstructing a simulation-ready 4D scene from monocular video" loading="lazy">
+            <span class="visual-label">Video to Physical 4D</span>
+          </div>
+          <div class="publication-body">
+            <div class="pub-top"><span class="venue">ECCV 2026</span><span class="pub-number">02</span></div>
+            <h3>One Video, One World: Turning Monocular Video into Physical 4D Scenes</h3>
+            <p class="authors">Junhao Chen<sup>*</sup>, Boran Zhang<sup>*</sup>, Mingjin Chen, <span class="me">Henghaofan Zhang</span>, Saining Zhang, Congcong Zhu, Hao Zhao, Ruqi Huang<sup>†</sup>, Zhihao Li, Yufei Wang<sup>†§</sup></p>
+            <p class="author-note"><sup>*</sup> Equal contribution &nbsp;·&nbsp; <sup>†</sup> Corresponding author &nbsp;·&nbsp; <sup>§</sup> Project lead</p>
+            <p class="pub-summary">A training-free system that converts a single monocular video into instance-level, watertight, simulation-ready 4D mesh scenes.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2606.31388" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              <a href="https://onevideooneworld.github.io/" target="_blank" rel="noopener noreferrer">Project ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication reveal">
+          <div class="publication-visual">
+            <img src="assets/lumera.jpg" alt="Lumera reconstructing an editable 3D world with objects and lighting" loading="lazy">
+            <span class="visual-label">Engine-Native Worlds</span>
+          </div>
+          <div class="publication-body">
+            <div class="pub-top"><span class="venue">arXiv 2026</span><span class="pub-number">03</span></div>
+            <h3>Engine-Native Editable 3D World Reconstruction with Objects and Lighting</h3>
+            <p class="authors">Junhao Chen<sup>*</sup>, Xinghao Chen<sup>*</sup>, <span class="me">Henghaofan Zhang<sup>*</sup></span>, Zihao Qiao, Saining Zhang, Yongzhi Li, Ruqi Huang, Sisi Li, Yimin Sheng, Jianyi Zhu, Hao Zhao<sup>†</sup></p>
+            <p class="author-note"><sup>*</sup> Equal contribution &nbsp;·&nbsp; <sup>†</sup> Corresponding author</p>
+            <p class="pub-summary">Lumera reconstructs editable, engine-native 3D scenes from a single image, with separated objects, parametric lighting, and bounded agentic refinement.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2607.20889" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+              <a href="./Lumera/">Project ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="contact">
+      <div class="contact-card reveal">
+        <h2>Let’s make the visual world editable.</h2>
+        <p>I’m interested in research collaborations and opportunities around 3D/4D vision, generative models, and embodied or physical AI.</p>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:hhfzhang@outlook.com">hhfzhang@outlook.com</a>
+          <a class="button" href="https://github.com/haidilao0328" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>© <span id="year">2026</span> Henghaofan Zhang</span>
+      <span>Built with care · Hosted on GitHub Pages</span>
     </div>
-  </section>
-
-  <section id="publications">
-    <h2>Publications / Projects</h2>
-    <ul>
-      <li>
-        <strong>Project Title / Paper Title</strong><br>
-        <span style="color:#666;">On Coming...</span><br>
-      </li>
-    </ul>
-  </section>
-
-  <footer style="margin-top: 50px; color: #888; font-size: 0.9em; text-align: center;">
-    &copy; 2026 Henghaofan Zhang. Powered by GitHub Pages.
   </footer>
 
+  <script>
+    const nav = document.querySelector('.site-nav');
+    const reveals = document.querySelectorAll('.reveal');
+    const trackButtons = document.querySelectorAll('.track-button');
+    const playerWrap = document.getElementById('spotify-player-wrap');
+
+    const updateNav = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    trackButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        trackButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        const player = document.createElement('iframe');
+        player.src = `https://open.spotify.com/embed/track/${button.dataset.track}?utm_source=generator&theme=0`;
+        player.title = `Spotify player: ${button.dataset.title}`;
+        player.loading = 'lazy';
+        player.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+        playerWrap.replaceChildren(player);
+      });
+    });
+
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach((element) => observer.observe(element));
+    } else {
+      reveals.forEach((element) => element.classList.add('visible'));
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
