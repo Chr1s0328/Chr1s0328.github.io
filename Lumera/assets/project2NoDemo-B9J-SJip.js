@@ -3998,15 +3998,9 @@ void main() {
     <section id="video" class="section">
       <div class="wrap">
         <div class="sec-head"><span class="eyebrow">Overview Video</span>
-          <h2 class="sec-title">Overview video coming soon</h2></div>
+          <h2 class="sec-title">Overview video</h2></div>
         <div class="viewport video-figure reveal">${_s}
-          <div class="video-placeholder">
-            <img src="${Ln(Yi.demoPoster)}" alt="Lumera overview video placeholder" loading="lazy" />
-            <div class="video-placeholder-panel mono">
-              <span>VIDEO PLACEHOLDER</span>
-              <b>Coming soon</b>
-            </div>
-          </div>
+          <iframe src="https://www.youtube-nocookie.com/embed/x7s8649kAO4" title="Lumera overview video" style="width:100%;aspect-ratio:16 / 9;display:block;border:0;background:var(--viewport)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
         </div>
       </div>
     </section>
